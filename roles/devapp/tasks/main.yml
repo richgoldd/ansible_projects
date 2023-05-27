@@ -1,10 +1,15 @@
 ---
 # tasks file for devapp
-- name: Install apache server
+- name: Install apache servera
+  become: true
+  become_user: root
   yum: name=httpd state=present 
 
-- name: Start Apache server
+- name: Start Apache servera
+  become: true
+  become_user: root
   service: name=httpd state=started enabled=yes
+  
 
 - name: File template for the app
   template: src=index.html_old.j2 dest=/var/www/html/index.html_old
