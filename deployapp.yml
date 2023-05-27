@@ -1,7 +1,7 @@
 ---
 - name: Deploying App Dev software
   hosts: web
-  becocme: true
+  become: true
   remote_user: jenkins
 
   roles:
