@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'slave01' }
+  agent { label 'slave01' }
   parameters {
     string(name: 'ANSIBLE_ADHOC_COMMANDS', defaultValue: 'Enter ansible ad-hoc commands', description: 'Enter Ansible Ad-hoc commands')
        }
