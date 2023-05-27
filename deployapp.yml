@@ -1,0 +1,10 @@
+---
+- name: Deploying App Dev software
+  hosts: web
+  becocme: true
+  remote_user: jenkins
+
+  roles:
+   - devapp
+
+   

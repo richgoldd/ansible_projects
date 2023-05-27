@@ -1,0 +1,9 @@
+---
+- name: Modifying /tmp/test.txt file contents
+  shell: echo "It's good to learn new things" > /tmp/test.txt
+  register: output
+
+- debug:
+    msg: "File has been modifieda with output {{ output.stdout }}"
+
+

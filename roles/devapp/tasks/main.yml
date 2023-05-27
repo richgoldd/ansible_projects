@@ -1,0 +1,18 @@
+---
+# tasks file for devapp
+#
+- name: Install apache server
+  yum: name=httpd state=present 
+
+- name: Start Apache server
+  service: name=httpd state=started enabled=yes
+
+- nmae: File template for the app
+  template: src=index.html.j2 dest=/var/www/html/index.html
+  notifiy: restart apache
+
+- name: Copy files to servers
+  copy: src=app.txt dest=/home/jenkins owner=jenkins group=jenkins mode=0775
+
+- include: modify_test.yml
+
