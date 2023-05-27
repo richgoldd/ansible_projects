@@ -7,7 +7,7 @@
 - name: Start Apache server
   service: name=httpd state=started enabled=yes
 
-- nmae: File template for the app
+- name: File template for the app
   template: src=index.html.j2 dest=/var/www/html/index.html
   notifiy: restart apache
 
