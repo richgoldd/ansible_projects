@@ -1,0 +1,24 @@
+---
+- name: Install apache server
+  hosts: web
+  remote_user: jenkins
+  become: yes
+
+  vars:
+    deploy: "httpd"
+
+  tasks:
+    - name: Installing apache
+      become: true
+      become_user: root
+      yum: name={{ deploy }} state=latest
+
+    - name: Validate Install
+      become: true
+      become_user: root
+      shell: systemctl status httpd
+      register: output
+
+    - debug: 
+        msg: "The result is {{ output.stdout }}"
+
