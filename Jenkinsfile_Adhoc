@@ -16,6 +16,7 @@ pipeline {
            ansible "${params.ANSIBLE_ADHOC_COMMANDS}"
            """
        }
+     }
     }
 }
 
