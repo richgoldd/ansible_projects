@@ -1,6 +1,5 @@
 ---
 # tasks file for devapp
-#
 - name: Install apache server
   yum: name=httpd state=present 
 
