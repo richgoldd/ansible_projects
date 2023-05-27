@@ -1,0 +1,22 @@
+pipeline {
+  agent {label 'slave01' }
+  parameters {
+    string(name: 'ANSIBLE_ADHOC_COMMANDS', defaultValue: 'Enter ansible ad-hoc commands', description: 'Enter Ansible Ad-hoc commands without suffice 'ansible''
+       }
+  stages{
+   stage('Checkout SCM') {
+     steps {
+       checkout scm
+     }
+    }
+  
+   stage('Deploy ansible playbook') {
+     steps {
+        sh """
+           ansible "${params.ANSIBLE_ADHOC_COMMANDS}"
+           """
+       }
+    }
+}
+
+           
