@@ -8,7 +8,7 @@
 
 - name: File template for the app
   template: src=index.html.j2 dest=/var/www/html/index.html
-  notifiy: restart apache
+  notify: restart apache
 
 - name: Copy files to servers
   copy: src=app.txt dest=/home/jenkins owner=jenkins group=jenkins mode=0775
