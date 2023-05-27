@@ -21,7 +21,7 @@ pipeline {
        }
     }
 
-     stage('Approve to deploy play') {
+   stage('Approve to deploy play') {
        option {
          timeout(time: 1, unit: 'MINUTES')
           }
