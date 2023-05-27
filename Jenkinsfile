@@ -18,6 +18,8 @@ pipeline {
            ansible-playbook devplay.yml --check
 
            """
+       }
+    }
 
      stage('Approve to deploy play') {
        option {
