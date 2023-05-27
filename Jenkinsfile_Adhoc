@@ -13,7 +13,9 @@ pipeline {
    stage('Deploy ansible playbook') {
      steps {
         sh """
-            "${params.ANSIBLE_ADHOC_COMMANDS}"
+
+            ${params.ANSIBLE_ADHOC_COMMANDS}
+
            """
        }
      }
