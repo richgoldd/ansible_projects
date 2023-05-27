@@ -22,7 +22,7 @@ pipeline {
     }
 
    stage('Approve to deploy play') {
-       option {
+       options{
          timeout(time: 1, unit: 'MINUTES')
           }
        steps{
