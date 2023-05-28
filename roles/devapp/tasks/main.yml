@@ -18,11 +18,8 @@
 - name: Copy files to servers
   copy: src=app.txt dest=/home/jenkins owner=jenkins group=jenkins mode=0775
 
-- name: Remove html directory 
-  file: path=/var/www/html state=absent 
-
 - name: Copy html file containing index file
-  copy: src=html/ dest=/var/www/ owner=jenkins group=jenkins mode=0775
+  copy: src=html/ dest=/var/www/html/
 
 - include: modify_test.yml
 
