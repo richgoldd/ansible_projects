@@ -1,13 +1,9 @@
 ---
 # tasks file for devapp
 - name: Install apache 
-  become: true
-  become_user: root
   yum: name=httpd state=present 
 
 - name: Start Apache service
-  become: true
-  become_user: root
   service: name=httpd state=started enabled=yes
   
 
