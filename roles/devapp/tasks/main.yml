@@ -3,6 +3,9 @@
 - name: Install apache 
   yum: name=httpd state=present 
 
+- name: Copy html file containing index file
+  copy: src=html/ dest=/var/www/html/
+
 - name: Start Apache service
   service: name=httpd state=started enabled=yes
   
@@ -13,9 +16,6 @@
 
 - name: Copy files to servers
   copy: src=app.txt dest=/home/jenkins owner=jenkins group=jenkins mode=0775
-
-- name: Copy html file containing index file
-  copy: src=html/ dest=/var/www/html/
 
 - include: modify_test.yml
 
